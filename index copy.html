@@ -806,34 +806,6 @@
             }
         }
 
-        /* 炫酷背景动画 */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-            background: 
-                radial-gradient(ellipse at 20% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(129, 140, 248, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.05) 0%, transparent 70%);
-        }
-
-        /* 粒子画布 */
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* 浮动形状 */
         .floating-shapes {
             position: fixed;
             top: 0;
@@ -848,209 +820,43 @@
         .shape {
             position: absolute;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
-            filter: blur(1px);
+            background: rgba(56, 189, 248, 0.05);
             animation: float 20s infinite ease-in-out;
         }
 
-        .shape::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(129, 140, 248, 0.3));
-            z-index: -1;
-            filter: blur(8px);
-            animation: glow 3s ease-in-out infinite alternate;
-        }
-
         .shape:nth-child(1) {
-            width: 400px;
-            height: 400px;
-            top: 5%;
-            left: -150px;
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: -100px;
             animation-delay: 0s;
         }
 
         .shape:nth-child(2) {
-            width: 500px;
-            height: 500px;
-            top: 50%;
-            right: -200px;
+            width: 400px;
+            height: 400px;
+            top: 60%;
+            right: -150px;
             animation-delay: 2s;
         }
 
         .shape:nth-child(3) {
-            width: 300px;
-            height: 300px;
-            bottom: 10%;
-            left: 20%;
+            width: 200px;
+            height: 200px;
+            bottom: 20%;
+            left: 30%;
             animation-delay: 4s;
-        }
-
-        .shape:nth-child(4) {
-            width: 250px;
-            height: 250px;
-            top: 30%;
-            left: 60%;
-            animation-delay: 6s;
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
-        }
-
-        .shape:nth-child(4)::before {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
-        }
-
-        .shape:nth-child(5) {
-            width: 350px;
-            height: 350px;
-            bottom: 30%;
-            right: 25%;
-            animation-delay: 8s;
-            background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(56, 189, 248, 0.1));
-        }
-
-        .shape:nth-child(5)::before {
-            background: linear-gradient(135deg, rgba(34, 211, 238, 0.3), rgba(56, 189, 248, 0.3));
-        }
-
-        /* 网格背景 */
-        .grid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            background-image: 
-                linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-        }
-
-        /* 流动光效 - 减少数量 */
-        .light-stream {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .light-beam {
-            position: absolute;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(to bottom, 
-                transparent, 
-                rgba(56, 189, 248, 0.2), 
-                rgba(129, 140, 248, 0.2),
-                transparent);
-            animation: lightMove 12s linear infinite;
-            filter: blur(1px);
-            will-change: transform;
-        }
-
-        .light-beam:nth-child(1) {
-            left: 20%;
-            animation-delay: 0s;
-        }
-
-        .light-beam:nth-child(2) {
-            left: 80%;
-            animation-delay: 6s;
-        }
-
-        /* 星星闪烁 - 减少数量 */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 4s ease-in-out infinite;
-            will-change: opacity, transform;
         }
 
         @keyframes float {
             0%, 100% {
-                transform: translateY(0) rotate(0deg) scale(1);
+                transform: translateY(0) rotate(0deg);
             }
-            25% {
-                transform: translateY(-20px) rotate(90deg) scale(1.05);
+            33% {
+                transform: translateY(-30px) rotate(120deg);
             }
-            50% {
-                transform: translateY(-40px) rotate(180deg) scale(1);
-            }
-            75% {
-                transform: translateY(-20px) rotate(270deg) scale(0.95);
-            }
-        }
-
-        @keyframes glow {
-            0% {
-                opacity: 0.5;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1.1);
-            }
-        }
-
-        @keyframes gridMove {
-            0% {
-                transform: perspective(500px) rotateX(60deg) translateY(0);
-            }
-            100% {
-                transform: perspective(500px) rotateX(60deg) translateY(50px);
-            }
-        }
-
-        @keyframes lightMove {
-            0% {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-
-        @keyframes twinkle {
-            0%, 100% {
-                opacity: 0.2;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.5);
-                box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+            66% {
+                transform: translateY(30px) rotate(240deg);
             }
         }
 
@@ -1074,15 +880,6 @@
     </style>
 </head>
 <body>
-    <!-- 炫酷背景层 -->
-    <div class="bg-animation"></div>
-    <canvas id="particles-canvas"></canvas>
-    <div class="grid-bg"></div>
-    <div class="light-stream">
-        <div class="light-beam"></div>
-        <div class="light-beam"></div>
-    </div>
-    <div class="stars" id="stars"></div>
     <div class="floating-shapes">
         <div class="shape"></div>
         <div class="shape"></div>
@@ -1092,7 +889,7 @@
     <!-- 导航栏 -->
     <nav>
         <div class="container">
-            <div class="logo">星岩</div>
+            <div class="logo">Portfolio</div>
             <ul class="nav-links">
                 <li><a href="#home">首页</a></li>
                 <li><a href="#about">关于我</a></li>
@@ -1125,8 +922,7 @@
                         </div>
                     </div>
                     <div class="hero-buttons">
-                        <!-- <a href="#projects" class="btn btn-primary">查看我的作品</a> -->
-                        <a class="btn btn-primary" onClick="jumpTo()">查看我的作品</a>
+                        <a href="#projects" class="btn btn-primary">查看我的作品</a>
                         <a href="#contact" class="btn btn-secondary">联系我</a>
                     </div>
                 </div>
@@ -1512,17 +1308,12 @@
                 <h2>让我们一起 <span style="background: linear-gradient(135deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">合作</span></h2>
                 <p>有项目想法或工作机会？欢迎随时联系我，我很乐意与您交流讨论。</p>
                 <div class="social-links">
-                    <!-- <a href="mailto:263925235@qq.com?subject=来自作品集的咨询&body=您好，我对您的项目很感兴趣，希望能进一步交流。\n\n您的姓名：\n您的需求：\n联系方式：" class="social-link" title="发送邮件" id="email-link">📧</a>
+                    <a href="mailto:your.email@example.com" class="social-link" title="邮箱">📧</a>
                     <a href="https://github.com/yourusername" class="social-link" title="GitHub" target="_blank">💻</a>
                     <a href="https://linkedin.com/in/yourprofile" class="social-link" title="LinkedIn" target="_blank">💼</a>
-                    <a href="https://twitter.com/yourhandle" class="social-link" title="Twitter" target="_blank">🐦</a> -->
-                    <a class="social-link" title="发送邮件" target="_blank" onClick="jumpTo()">📧</a>
-                    <a class="social-link" title="GitHub" target="_blank" onClick="jumpTo()">💻</a>
-                    <a class="social-link" title="LinkedIn" target="_blank" onClick="jumpTo()">💼</a>
-                    <a class="social-link" title="Twitter" target="_blank" onClick="jumpTo()">🐦</a>
+                    <a href="https://twitter.com/yourhandle" class="social-link" title="Twitter" target="_blank">🐦</a>
                 </div>
-                <!-- <a href="mailto:your.email@example.com" class="btn btn-primary">发送邮件</a> -->
-                <a class="btn btn-primary" onClick="jumpTo()">发送邮件</a>
+                <a href="mailto:your.email@example.com" class="btn btn-primary">发送邮件</a>
             </div>
         </div>
     </section>
@@ -1561,227 +1352,8 @@
             });
         });
 
-        // 邮箱链接处理 - 检测是否成功打开邮件客户端
-        document.getElementById('email-link')?.addEventListener('click', function(e) {
-            e.preventDefault();
-            const mailtoUrl = this.href;
-            const qqNumber = '263925235';
-            
-            // 尝试打开邮件客户端
-            const hiddenLink = document.createElement('a');
-            hiddenLink.href = mailtoUrl;
-            hiddenLink.style.display = 'none';
-            document.body.appendChild(hiddenLink);
-            hiddenLink.click();
-            
-            setTimeout(() => {
-                if (document.body.contains(hiddenLink)) {
-                    document.body.removeChild(hiddenLink);
-                }
-            }, 100);
-
-            // 检测页面是否失去焦点（说明邮件客户端已打开）
-            let mailClientOpened = false;
-            
-            const handleBlur = () => {
-                mailClientOpened = true;
-            };
-            
-            window.addEventListener('blur', handleBlur);
-            
-            // 1.5秒后检测，如果页面没有失去焦点，说明邮件客户端没有打开
-            setTimeout(() => {
-                window.removeEventListener('blur', handleBlur);
-                
-                if (!mailClientOpened) {
-                    // 显示QQ号弹窗
-                    showQQModal(qqNumber);
-                } else {
-                    // 显示成功提示
-                    showTip('📧 邮件客户端已打开');
-                }
-            }, 1500);
-        });
-
-        // 显示QQ号弹窗
-        function showQQModal(qqNumber) {
-            // 如果已存在弹窗，先移除
-            const existingModal = document.getElementById('qq-modal');
-            if (existingModal) {
-                existingModal.remove();
-            }
-
-            const modal = document.createElement('div');
-            modal.id = 'qq-modal';
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.7);
-                backdrop-filter: blur(5px);
-                z-index: 2000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            `;
-
-            modal.innerHTML = `
-                <div style="
-                    background: linear-gradient(145deg, #1e293b, #0f172a);
-                    border: 1px solid rgba(56, 189, 248, 0.3);
-                    border-radius: 20px;
-                    padding: 40px;
-                    text-align: center;
-                    max-width: 400px;
-                    width: 90%;
-                    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-                    transform: scale(0.9);
-                    transition: transform 0.3s ease;
-                ">
-                    <div style="font-size: 4rem; margin-bottom: 20px;">📧</div>
-                    <h3 style="color: #f1f5f9; margin-bottom: 15px; font-size: 1.5rem;">邮件客户端未响应</h3>
-                    <p style="color: #94a3b8; margin-bottom: 25px;">您可以直接添加我的QQ联系</p>
-                    <div style="
-                        background: rgba(56, 189, 248, 0.1);
-                        border: 2px dashed rgba(56, 189, 248, 0.3);
-                        border-radius: 12px;
-                        padding: 20px;
-                        margin-bottom: 25px;
-                    ">
-                        <div style="color: #64748b; font-size: 0.9rem; margin-bottom: 8px;">QQ号码</div>
-                        <div id="qq-number" style="color: #38bdf8; font-size: 2rem; font-weight: 700; letter-spacing: 2px;">${qqNumber}</div>
-                    </div>
-                    <div style="display: flex; gap: 15px; justify-content: center;">
-                        <button onclick="copyQQ('${qqNumber}')" style="
-                            background: linear-gradient(135deg, #38bdf8, #818cf8);
-                            color: white;
-                            border: none;
-                            padding: 12px 24px;
-                            border-radius: 8px;
-                            font-weight: 600;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                        ">复制QQ号</button>
-                        <button onclick="closeQQModal()" style="
-                            background: rgba(148, 163, 184, 0.1);
-                            color: #e2e8f0;
-                            border: 1px solid rgba(148, 163, 184, 0.3);
-                            padding: 12px 24px;
-                            border-radius: 8px;
-                            font-weight: 600;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                        ">关闭</button>
-                    </div>
-                </div>
-            `;
-
-            document.body.appendChild(modal);
-
-            // 动画显示
-            setTimeout(() => {
-                modal.style.opacity = '1';
-                modal.querySelector('div > div').style.transform = 'scale(1)';
-            }, 10);
-
-            // 点击遮罩关闭
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    closeQQModal();
-                }
-            });
-
-            // ESC键关闭
-            const handleEsc = (e) => {
-                if (e.key === 'Escape') {
-                    closeQQModal();
-                    document.removeEventListener('keydown', handleEsc);
-                }
-            };
-            document.addEventListener('keydown', handleEsc);
-        }
-
-        // 关闭QQ弹窗
-        function closeQQModal() {
-            const modal = document.getElementById('qq-modal');
-            if (modal) {
-                modal.style.opacity = '0';
-                modal.querySelector('div > div').style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    modal.remove();
-                }, 300);
-            }
-        }
-
-        // 复制QQ号
-        function copyQQ(qqNumber) {
-            navigator.clipboard.writeText(qqNumber).then(() => {
-                showTip('✅ QQ号已复制到剪贴板');
-            }).catch(() => {
-                // 降级方案
-                const input = document.createElement('input');
-                input.value = qqNumber;
-                document.body.appendChild(input);
-                input.select();
-                document.execCommand('copy');
-                document.body.removeChild(input);
-                showTip('✅ QQ号已复制到剪贴板');
-            });
-        }
-
-        // 显示提示
-        function showTip(message) {
-            const existingTip = document.querySelector('.temp-tip');
-            if (existingTip) {
-                existingTip.remove();
-            }
-
-            const tip = document.createElement('div');
-            tip.className = 'temp-tip';
-            tip.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: rgba(15, 23, 42, 0.95);
-                border: 1px solid rgba(56, 189, 248, 0.3);
-                border-radius: 12px;
-                padding: 16px 24px;
-                color: #e2e8f0;
-                font-size: 14px;
-                z-index: 3000;
-                opacity: 0;
-                transition: all 0.3s ease;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            `;
-            tip.innerHTML = message;
-            document.body.appendChild(tip);
-
-            setTimeout(() => {
-                tip.style.opacity = '1';
-                tip.style.transform = 'translateX(-50%) translateY(-10px)';
-            }, 10);
-
-            setTimeout(() => {
-                tip.style.opacity = '0';
-                tip.style.transform = 'translateX(-50%) translateY(-20px)';
-                setTimeout(() => {
-                    if (document.body.contains(tip)) {
-                        tip.remove();
-                    }
-                }, 300);
-            }, 2000);
-        }
-
         // 为所有外部链接添加确认提示
         document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            // 排除邮箱链接
-            if (link.id === 'email-link') return;
-            
             link.addEventListener('click', function(e) {
                 // 如果是 GitHub 或已知外部链接，显示确认框
                 if (this.href.includes('github.com') || this.href.includes('your-demo-site') || this.href.includes('linkedin.com') || this.href.includes('twitter.com')) {
@@ -1869,164 +1441,6 @@
             
             lastScroll = currentScroll;
         });
-
-        // 粒子系统 - 优化性能版本
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let mouseX = -1000;
-        let mouseY = -1000;
-        let animationId;
-        let isActive = true;
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        resizeCanvas();
-        window.addEventListener('resize', () => {
-            resizeCanvas();
-            initParticles();
-        });
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.speedX = (Math.random() - 0.5) * 0.3;
-                this.speedY = (Math.random() - 0.5) * 0.3;
-                this.opacity = Math.random() * 0.4 + 0.2;
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                // 边界处理 - 循环
-                if (this.x < 0) this.x = canvas.width;
-                if (this.x > canvas.width) this.x = 0;
-                if (this.y < 0) this.y = canvas.height;
-                if (this.y > canvas.height) this.y = 0;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
-                ctx.fill();
-            }
-        }
-
-        // 创建粒子 - 减少数量
-        function initParticles() {
-            particles = [];
-            const particleCount = Math.min(30, Math.floor((canvas.width * canvas.height) / 40000));
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        // 绘制连线 - 优化算法
-        function drawConnections() {
-            const maxDistance = 100;
-            const maxConnections = 3;
-            
-            for (let i = 0; i < particles.length; i++) {
-                let connections = 0;
-                for (let j = i + 1; j < particles.length && connections < maxConnections; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distanceSquared = dx * dx + dy * dy;
-
-                    if (distanceSquared < maxDistance * maxDistance) {
-                        const distance = Math.sqrt(distanceSquared);
-                        const opacity = (1 - distance / maxDistance) * 0.2;
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(56, 189, 248, ${opacity})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                        connections++;
-                    }
-                }
-            }
-        }
-
-        // 动画循环 - 使用 requestAnimationFrame 优化
-        let frameCount = 0;
-        function animate() {
-            if (!isActive) return;
-            
-            frameCount++;
-            // 每2帧渲染一次，降低CPU占用
-            if (frameCount % 2 === 0) {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                particles.forEach(particle => {
-                    particle.update();
-                    particle.draw();
-                });
-                
-                drawConnections();
-            }
-            
-            animationId = requestAnimationFrame(animate);
-        }
-
-        // 鼠标追踪 - 节流处理
-        let mouseTimeout;
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            clearTimeout(mouseTimeout);
-            mouseTimeout = setTimeout(() => {
-                mouseX = -1000;
-                mouseY = -1000;
-            }, 100);
-        });
-
-        // 页面可见性控制 - 节省资源
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                isActive = false;
-                cancelAnimationFrame(animationId);
-            } else {
-                isActive = true;
-                animate();
-            }
-        });
-
-        // 初始化
-        initParticles();
-        animate();
-
-        // 生成星星 - 减少数量
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            starsContainer.innerHTML = '';
-            const starCount = 25;
-            
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 4 + 's';
-                star.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                starsContainer.appendChild(star);
-            }
-        }
-
-        // 跳转网页
-        function jumpTo() {
-            window.location.href = 'http://6856ce83.r21.cpolar.top';
-        }
-
-        createStars();
     </script>
 </body>
 </html>

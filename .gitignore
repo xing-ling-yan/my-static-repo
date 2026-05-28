@@ -1,6 +1,8 @@
-# wrangler files
-.wrangler
-.dev.vars*
-!.dev.vars.example
-.env*
-!.env.example
+# Ignore all files by default
+*
+
+# Unignore .gitignore itself
+!.gitignore
+
+# Unignore HTML files
+!*.html
